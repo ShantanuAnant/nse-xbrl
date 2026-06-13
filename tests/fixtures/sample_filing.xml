@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Synthetic IFIndAs "Integrated Filing - Financials" instance document.
+
+  This is NOT a real filing. It is a minimal but structurally faithful
+  fixture covering the four contexts (OneD/FourD/OneI/PY_I) and a
+  representative subset of tags from each section, used to test
+  nse_xbrl.xbrl.parse_xbrl / build_result_fields.
+-->
+<xbrl xmlns="http://www.xbrl.org/2003/instance"
+      xmlns:xbrli="http://www.xbrl.org/2003/instance"
+      xmlns:in-bse-fin="http://www.bseindia.com/xbrl/fin/2023-03-31/in-bse-fin"
+      xmlns:iso4217="http://www.xbrl.org/2003/iso4217">
+
+  <!-- Context: current quarter (Oct-Dec 2025) -->
+  <xbrli:context id="OneD">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com">500001</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2025-10-01</xbrli:startDate>
+      <xbrli:endDate>2025-12-31</xbrli:endDate>
+    </xbrli:period>
+  </xbrli:context>
+
+  <!-- Context: year-to-date (Apr-Dec 2025) -->
+  <xbrli:context id="FourD">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com">500001</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:startDate>2025-04-01</xbrli:startDate>
+      <xbrli:endDate>2025-12-31</xbrli:endDate>
+    </xbrli:period>
+  </xbrli:context>
+
+  <!-- Context: balance sheet date (current) -->
+  <xbrli:context id="OneI">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com">500001</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2025-12-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+
+  <!-- Context: balance sheet date (prior year) -->
+  <xbrli:context id="PY_I">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.bseindia.com">500001</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2024-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+
+  <!-- Units -->
+  <xbrli:unit id="INR">
+    <xbrli:measure>iso4217:INR</xbrli:measure>
+  </xbrli:unit>
+  <xbrli:unit id="shares">
+    <xbrli:measure>xbrli:shares</xbrli:measure>
+  </xbrli:unit>
+  <xbrli:unit id="pure">
+    <xbrli:measure>xbrli:pure</xbrli:measure>
+  </xbrli:unit>
+
+  <!-- ── Income Statement: current quarter (OneD) ──────────────────────── -->
+  <in-bse-fin:RevenueFromOperations contextRef="OneD" unitRef="INR" decimals="-7">125000000000</in-bse-fin:RevenueFromOperations>
+  <in-bse-fin:OtherIncome contextRef="OneD" unitRef="INR" decimals="-7">2500000000</in-bse-fin:OtherIncome>
+  <in-bse-fin:Income contextRef="OneD" unitRef="INR" decimals="-7">127500000000</in-bse-fin:Income>
+  <in-bse-fin:EmployeeBenefitExpense contextRef="OneD" unitRef="INR" decimals="-7">8000000000</in-bse-fin:EmployeeBenefitExpense>
+  <in-bse-fin:CostOfMaterialsConsumed contextRef="OneD" unitRef="INR" decimals="-7">60000000000</in-bse-fin:CostOfMaterialsConsumed>
+  <in-bse-fin:DepreciationDepletionAndAmortisationExpense contextRef="OneD" unitRef="INR" decimals="-7">5000000000</in-bse-fin:DepreciationDepletionAndAmortisationExpense>
+  <in-bse-fin:FinanceCosts contextRef="OneD" unitRef="INR" decimals="-7">3000000000</in-bse-fin:FinanceCosts>
+  <in-bse-fin:OtherExpenses contextRef="OneD" unitRef="INR" decimals="-7">20000000000</in-bse-fin:OtherExpenses>
+  <in-bse-fin:Expenses contextRef="OneD" unitRef="INR" decimals="-7">96000000000</in-bse-fin:Expenses>
+  <in-bse-fin:ProfitBeforeExceptionalItemsAndTax contextRef="OneD" unitRef="INR" decimals="-7">31500000000</in-bse-fin:ProfitBeforeExceptionalItemsAndTax>
+  <in-bse-fin:ProfitBeforeTax contextRef="OneD" unitRef="INR" decimals="-7">31500000000</in-bse-fin:ProfitBeforeTax>
+  <in-bse-fin:CurrentTax contextRef="OneD" unitRef="INR" decimals="-7">7000000000</in-bse-fin:CurrentTax>
+  <in-bse-fin:DeferredTax contextRef="OneD" unitRef="INR" decimals="-7">500000000</in-bse-fin:DeferredTax>
+  <in-bse-fin:TaxExpense contextRef="OneD" unitRef="INR" decimals="-7">7500000000</in-bse-fin:TaxExpense>
+  <in-bse-fin:ProfitLossForPeriod contextRef="OneD" unitRef="INR" decimals="-7">24000000000</in-bse-fin:ProfitLossForPeriod>
+  <in-bse-fin:ProfitOrLossAttributableToOwnersOfParent contextRef="OneD" unitRef="INR" decimals="-7">23500000000</in-bse-fin:ProfitOrLossAttributableToOwnersOfParent>
+  <in-bse-fin:ProfitOrLossAttributableToNonControllingInterests contextRef="OneD" unitRef="INR" decimals="-7">500000000</in-bse-fin:ProfitOrLossAttributableToNonControllingInterests>
+  <in-bse-fin:DilutedEarningsLossPerShareFromContinuingOperations contextRef="OneD" unitRef="INR" decimals="2">17.35</in-bse-fin:DilutedEarningsLossPerShareFromContinuingOperations>
+  <in-bse-fin:BasicEarningsLossPerShareFromContinuingOperations contextRef="OneD" unitRef="INR" decimals="2">17.40</in-bse-fin:BasicEarningsLossPerShareFromContinuingOperations>
+
+  <!-- ── Income Statement: year-to-date (FourD) ────────────────────────── -->
+  <in-bse-fin:RevenueFromOperations contextRef="FourD" unitRef="INR" decimals="-7">370000000000</in-bse-fin:RevenueFromOperations>
+  <in-bse-fin:OtherIncome contextRef="FourD" unitRef="INR" decimals="-7">7000000000</in-bse-fin:OtherIncome>
+  <in-bse-fin:Income contextRef="FourD" unitRef="INR" decimals="-7">377000000000</in-bse-fin:Income>
+  <in-bse-fin:ProfitBeforeTax contextRef="FourD" unitRef="INR" decimals="-7">92000000000</in-bse-fin:ProfitBeforeTax>
+  <in-bse-fin:TaxExpense contextRef="FourD" unitRef="INR" decimals="-7">22000000000</in-bse-fin:TaxExpense>
+  <in-bse-fin:ProfitLossForPeriod contextRef="FourD" unitRef="INR" decimals="-7">70000000000</in-bse-fin:ProfitLossForPeriod>
+  <in-bse-fin:DilutedEarningsLossPerShareFromContinuingOperations contextRef="FourD" unitRef="INR" decimals="2">50.62</in-bse-fin:DilutedEarningsLossPerShareFromContinuingOperations>
+  <in-bse-fin:BasicEarningsLossPerShareFromContinuingOperations contextRef="FourD" unitRef="INR" decimals="2">50.80</in-bse-fin:BasicEarningsLossPerShareFromContinuingOperations>
+
+  <!-- ── Shared capital structure ───────────────────────────────────────── -->
+  <in-bse-fin:PaidUpValueOfEquityShareCapital contextRef="OneD" unitRef="INR" decimals="-7">13500000000</in-bse-fin:PaidUpValueOfEquityShareCapital>
+  <in-bse-fin:FaceValueOfEquityShareCapital contextRef="OneD" unitRef="INR" decimals="2">10</in-bse-fin:FaceValueOfEquityShareCapital>
+
+  <!-- ── Balance Sheet: current (OneI) ───────────────────────────────────── -->
+  <in-bse-fin:EquityAndLiabilities contextRef="OneI" unitRef="INR" decimals="-7">950000000000</in-bse-fin:EquityAndLiabilities>
+  <in-bse-fin:NoncurrentAssets contextRef="OneI" unitRef="INR" decimals="-7">600000000000</in-bse-fin:NoncurrentAssets>
+  <in-bse-fin:PropertyPlantAndEquipment contextRef="OneI" unitRef="INR" decimals="-7">400000000000</in-bse-fin:PropertyPlantAndEquipment>
+  <in-bse-fin:CurrentAssets contextRef="OneI" unitRef="INR" decimals="-7">350000000000</in-bse-fin:CurrentAssets>
+  <in-bse-fin:Inventories contextRef="OneI" unitRef="INR" decimals="-7">80000000000</in-bse-fin:Inventories>
+  <in-bse-fin:TradeReceivablesCurrent contextRef="OneI" unitRef="INR" decimals="-7">45000000000</in-bse-fin:TradeReceivablesCurrent>
+  <in-bse-fin:Equity contextRef="OneI" unitRef="INR" decimals="-7">550000000000</in-bse-fin:Equity>
+  <in-bse-fin:EquityShareCapital contextRef="OneI" unitRef="INR" decimals="-7">13500000000</in-bse-fin:EquityShareCapital>
+  <in-bse-fin:OtherEquity contextRef="OneI" unitRef="INR" decimals="-7">536500000000</in-bse-fin:OtherEquity>
+  <in-bse-fin:Liabilities contextRef="OneI" unitRef="INR" decimals="-7">400000000000</in-bse-fin:Liabilities>
+  <in-bse-fin:NoncurrentLiabilities contextRef="OneI" unitRef="INR" decimals="-7">180000000000</in-bse-fin:NoncurrentLiabilities>
+  <in-bse-fin:NoncurrentFinancialLiabilities contextRef="OneI" unitRef="INR" decimals="-7">120000000000</in-bse-fin:NoncurrentFinancialLiabilities>
+  <in-bse-fin:CurrentLiabilities contextRef="OneI" unitRef="INR" decimals="-7">220000000000</in-bse-fin:CurrentLiabilities>
+  <in-bse-fin:TradePayablesCurrent contextRef="OneI" unitRef="INR" decimals="-7">60000000000</in-bse-fin:TradePayablesCurrent>
+  <in-bse-fin:CurrentFinancialLiabilities contextRef="OneI" unitRef="INR" decimals="-7">50000000000</in-bse-fin:CurrentFinancialLiabilities>
+
+  <!-- ── Balance Sheet: prior year (PY_I) ───────────────────────────────── -->
+  <in-bse-fin:EquityAndLiabilities contextRef="PY_I" unitRef="INR" decimals="-7">880000000000</in-bse-fin:EquityAndLiabilities>
+  <in-bse-fin:NoncurrentAssets contextRef="PY_I" unitRef="INR" decimals="-7">560000000000</in-bse-fin:NoncurrentAssets>
+  <in-bse-fin:CurrentAssets contextRef="PY_I" unitRef="INR" decimals="-7">320000000000</in-bse-fin:CurrentAssets>
+  <in-bse-fin:Equity contextRef="PY_I" unitRef="INR" decimals="-7">490000000000</in-bse-fin:Equity>
+  <in-bse-fin:EquityShareCapital contextRef="PY_I" unitRef="INR" decimals="-7">13500000000</in-bse-fin:EquityShareCapital>
+  <in-bse-fin:OtherEquity contextRef="PY_I" unitRef="INR" decimals="-7">476500000000</in-bse-fin:OtherEquity>
+  <in-bse-fin:NoncurrentLiabilities contextRef="PY_I" unitRef="INR" decimals="-7">170000000000</in-bse-fin:NoncurrentLiabilities>
+  <in-bse-fin:CurrentLiabilities contextRef="PY_I" unitRef="INR" decimals="-7">220000000000</in-bse-fin:CurrentLiabilities>
+  <in-bse-fin:TradeReceivablesCurrent contextRef="PY_I" unitRef="INR" decimals="-7">40000000000</in-bse-fin:TradeReceivablesCurrent>
+  <in-bse-fin:TradePayablesCurrent contextRef="PY_I" unitRef="INR" decimals="-7">55000000000</in-bse-fin:TradePayablesCurrent>
+  <in-bse-fin:Inventories contextRef="PY_I" unitRef="INR" decimals="-7">75000000000</in-bse-fin:Inventories>
+  <in-bse-fin:PropertyPlantAndEquipment contextRef="PY_I" unitRef="INR" decimals="-7">385000000000</in-bse-fin:PropertyPlantAndEquipment>
+
+  <!-- ── Cash Flow: year-to-date (FourD) ─────────────────────────────────── -->
+  <in-bse-fin:IncomeTaxesPaidRefundClassifiedAsOperatingActivities contextRef="FourD" unitRef="INR" decimals="-7">-21000000000</in-bse-fin:IncomeTaxesPaidRefundClassifiedAsOperatingActivities>
+  <in-bse-fin:PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities contextRef="FourD" unitRef="INR" decimals="-7">-35000000000</in-bse-fin:PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities>
+  <in-bse-fin:DividendsPaidClassifiedAsFinancingActivities contextRef="FourD" unitRef="INR" decimals="-7">-18000000000</in-bse-fin:DividendsPaidClassifiedAsFinancingActivities>
+  <in-bse-fin:IncreaseDecreaseInCashAndCashEquivalents contextRef="FourD" unitRef="INR" decimals="-7">5000000000</in-bse-fin:IncreaseDecreaseInCashAndCashEquivalents>
+
+  <!-- ── A fact in a dimensional/segment context, not one of the 4 main ones ── -->
+  <in-bse-fin:RevenueFromOperations contextRef="OneD_SegmentA" unitRef="INR" decimals="-7">80000000000</in-bse-fin:RevenueFromOperations>
+
+</xbrl>
