@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "nse-xbrl"
-version = "0.1.0"
+version = "0.1.1"
 description = "Parse NSE 'Integrated Filing - Financials' XBRL documents into structured Python data"
 readme = "README.md"
 license = { text = "MIT" }
@@ -30,7 +30,7 @@ pandas = ["pandas>=1.5"]
 dev = ["pytest>=7.0"]
 
 [project.urls]
-Homepage = "https://github.com/ShantanuAnant/nse-xbrl"
+Repository = "https://github.com/ShantanuAnant/nse-xbrl"
 Issues = "https://github.com/ShantanuAnant/nse-xbrl/issues"
 
 [tool.setuptools.packages.find]

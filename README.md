@@ -1,8 +1,20 @@
+<div align="center">
+
 # nse-xbrl
 
-Parse NSE's **"Integrated Filing - Financials"** XBRL documents into typed,
-structured Python data — income statement, balance sheet (current + prior
-year), and cash flow, all from a single XBRL file.
+**Parse NSE "Integrated Filing - Financials" XBRL documents into typed,
+structured Python data.**
+
+[![PyPI](https://img.shields.io/pypi/v/nse-xbrl.svg)](https://pypi.org/project/nse-xbrl/)
+[![Python versions](https://img.shields.io/pypi/pyversions/nse-xbrl.svg)](https://pypi.org/project/nse-xbrl/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
+</div>
+
+---
+
+Income statement, balance sheet (current + prior year), and cash flow —
+all extracted from a single XBRL file into a clean Python dataclass.
 
 ## Why
 
@@ -17,6 +29,16 @@ handling (filers use `in-bse-fin`, `in-capmkt`, `in-ind-as`, etc.
 interchangeably for the same tags), and the four-context structure
 (`OneD` / `FourD` / `OneI` / `PY_I`) that every Integrated Filing follows.
 
+## Contents
+
+- [Install](#install)
+- [Quick start: parse an XBRL file you already have](#quick-start-parse-an-xbrl-file-you-already-have)
+- [Fetching filings from NSE directly](#fetching-filings-from-nse-directly)
+- [pandas helper](#pandas-helper)
+- [Field reference](#field-reference)
+- [Limitations & disclaimer](#limitations--disclaimer)
+- [Development](#development)
+
 ## Install
 
 ```bash
@@ -25,8 +47,6 @@ pip install nse-xbrl
 # with pandas helpers
 pip install nse-xbrl[pandas]
 ```
-
-(Not yet on PyPI — for now, install from source: `pip install -e .`)
 
 ## Quick start: parse an XBRL file you already have
 
@@ -46,6 +66,8 @@ print("Debt/Equity:", result.debt_equity_ratio)
 
 Every field absent from the filing is `None` — no exceptions, no silent
 zeros.
+
+---
 
 ## Fetching filings from NSE directly
 
@@ -79,6 +101,8 @@ Cookies are short-lived (hours). `NSEClient` re-seeds the session on
 See [`examples/fetch_reliance.py`](examples/fetch_reliance.py) for a full
 example.
 
+---
+
 ## pandas helper
 
 ```python
@@ -86,6 +110,8 @@ from nse_xbrl.frames import to_dataframe
 
 df = to_dataframe(filings)   # one row per filing, one column per field
 ```
+
+---
 
 ## Field reference
 
@@ -138,6 +164,8 @@ contexts.
 - `debt_equity_ratio` — total financial liabilities / total equity
 - `book_value_per_share` — total equity / shares outstanding
 
+---
+
 ## Limitations & disclaimer
 
 - **Unofficial.** This talks to NSE's public website, not a documented API.
@@ -153,6 +181,8 @@ contexts.
   not yet mapped — check `raw_facts` if a field you expect is `None`.
 - **Not investment advice.** This is a data-parsing tool, nothing more.
 
+---
+
 ## Development
 
 ```bash
@@ -160,6 +190,8 @@ pip install -e ".[dev]"
 pytest
 ```
 
+---
+
 ## License
 
-MIT
+MIT — see [LICENSE](LICENSE).
